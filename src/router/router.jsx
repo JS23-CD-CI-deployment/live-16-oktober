@@ -7,7 +7,7 @@ import Confirmation from "../pages/Confirmation";
 function isProduction() {
   console.log(import.meta.env);
 
-  if (import.meta.env.PROD) return { basename: "/live-16-oktober" };
+  if (import.meta.env.PROD) return { basename: import.meta.env.BASE_URL };
   else return {};
 }
 
