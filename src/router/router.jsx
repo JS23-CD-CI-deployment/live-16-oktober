@@ -4,6 +4,13 @@ import Events from "../pages/Events";
 import SelectedEvent from "../pages/SelectedEvent";
 import Confirmation from "../pages/Confirmation";
 
+function isProduction() {
+  console.log(import.meta.env);
+
+  if (import.meta.env.PROD) return { basename: "/live-16-oktober" };
+  else return {};
+}
+
 const router = createBrowserRouter(
   [
     {
@@ -19,7 +26,7 @@ const router = createBrowserRouter(
       element: <Confirmation />,
     },
   ],
-  { basename: "/live-16-oktober" }
+  isProduction()
 );
 
 export default router;
